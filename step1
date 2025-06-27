@@ -1,0 +1,36 @@
+Phase 1: Planning & Scoping (The Blueprint)
+First, we'll break down the application into its core components.
+User Stories
+These are simple descriptions of a feature from a user's perspective.
+As a user, I want to...
+...sign up for an account so I can have my own private list.
+...log in to my account to see my tasks.
+...see a list of all my to-do items.
+...add a new to-do item to my list.
+...mark a to-do item as "complete".
+...delete a to-do item I no longer need.
+...log out of my account.
+Core Features (MVP - Minimum Viable Product)
+Based on the stories, here are the features for our first version:
+User Authentication: A system for users to sign up, log in, and log out. We'll start with a simple Google login to make it easy.
+Task Dashboard: The main page where a logged-in user sees their tasks.
+Task Creation: An input field and a button to create a new task.
+Task State Management: A checkbox next to each task to toggle its completion status.
+Task Deletion: A button to remove a task permanently.
+Data Models
+This is how we'll structure our data in the database. It's very simple for this project.
+User Model:
+id: A unique identifier for the user.
+email: The user's email address (used for logging in).
+name: The user's name.
+image: A profile picture URL (provided by Google login).
+todos: A list of all to-do items created by this user.
+Todo Model:
+id: A unique identifier for the task.
+text: The content of the to-do item (e.g., "Buy milk").
+completed: A true/false value indicating if the task is done.
+createdAt: A timestamp for when the task was created.
+userId: A link that connects this to-do item back to its owner, the User.
+This plan gives us a clear roadmap. Now, let's choose our tools.
+
+
