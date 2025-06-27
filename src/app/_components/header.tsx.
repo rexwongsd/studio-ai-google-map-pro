@@ -1,0 +1,42 @@
+// src/app/_components/header.tsx
+"use client";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { LogIn, LogOut, User, Image as ImageIcon } from "lucide-react";
+
+export function Header() {
+  const session = useSession();
+  const isLoggedIn = !!session.data;
+
+  return (
+    <header className="bg-gray-900 text-white">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <Link href="/" className="text-xl font-bold">
+          AI Photo Editor
+        </Link>
+        <nav className="flex items-center gap-4">
+          {isLoggedIn && (
+            <Link href="/gallery" className="flex items-center gap-2 hover:text-gray-300">
+              <ImageIcon size={18} /> My Gallery
+            </Link>
+          )}
+          {isLoggedIn ? (
+            <button
+              onClick={() => signOut()}
+              className="flex items-center gap-2 rounded-md bg-red-600 px-3 py-2 font-semibold hover:bg-red-700"
+            >
+              <LogOut size={18} /> Sign Out
+            </button>
+          ) : (
+            <button
+              onClick={() => signIn("github")}
+              className="flex items-center gap-2 rounded-md bg-blue-600 px-3 py-2 font-semibold hover:bg-blue-700"
+            >
+              <LogIn size={18} /> Sign In with GitHub
+            </button>
+          )}
+        </nav>
+      </div>
+    </header>
+  );
+}
