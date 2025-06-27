@@ -1,0 +1,36 @@
+Phase 2: Choosing the Technology Stack (The Toolbox)
+For this project, I recommend a modern and highly efficient stack. It's easy to set up and very powerful.
+Framework: Next.js (React)
+Database: PostgreSQL
+ORM (Code-to-Database Link): Prisma
+Authentication: NextAuth.js
+Styling: Tailwind CSS
+Deployment: Vercel & Supabase
+The combination of Next.js, Prisma, Tailwind, and NextAuth is so popular and effective that it has a name: the T3 Stack. Luckily, there's a tool that sets up a new project with all of this pre-configured.
+Action Step: Let's Set Up Your Project!
+Now it's time to create the project on your local machine.
+Open your terminal or command prompt.
+Navigate to the directory where you want to create your project (e.g., cd ~/Desktop/Projects).
+Run the following command. This will use the create-t3-app tool to build the project boilerplate for us.
+Generated bash
+npx create-t3-app@latest todo-app
+Use code with caution.
+Bash
+The installer will ask you a few questions. Here's what I recommend you choose:
+Will you be using JavaScript or TypeScript? -> TypeScript (It's safer and better for long-term projects).
+Which packages will you be using? -> Use the spacebar to select/deselect. Make sure the following are checked:
+NextAuth.js
+Prisma
+Tailwind CSS
+tRPC (We will use this to make communication between your frontend and backend typesafe and incredibly easy).
+Do you want to initialize a new git repository? -> Yes.
+Do you want to run 'npm install'? -> Yes.
+Would you like us to run 'prisma init' for you? -> No (The T3 stack handles this).
+Would you like us to simplify the boilerplate? -> Yes.
+After the installation is complete, navigate into your new project directory:
+Generated bash
+cd todo-app
+Use code with caution.
+Bash
+Congratulations! You now have a complete, fully-configured full-stack project skeleton on your computer.
+Our next step will be to set up the database using Prisma and define the User and Todo models we planned out. Are you ready for Phase 3?
