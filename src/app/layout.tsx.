@@ -1,0 +1,33 @@
+// src/app/layout.tsx
+import "~/styles/globals.css";
+import { Inter } from "next/font/google";
+import { TRPCReactProvider } from "~/trpc/react";
+import { Header } from "./_components/header";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+export const metadata = {
+  title: "AI Photo Editor",
+  description: "Edit photos with the power of AI",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`font-sans ${inter.variable} bg-gray-800 text-white`}>
+        <TRPCReactProvider>
+          <Header />
+          <main>{children}</main>
+        </TRPCReactProvider>
+      </body>
+    </html>
+  );
+}
